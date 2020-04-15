@@ -35,4 +35,10 @@ class ItoListView {
 
         this._element.innerHTML = a + this._template(ito);
     }
+
+    // 糸テーブルをクリアするメソッド
+    clear() {
+        this._element.innerHTML = '';
+        
+    }
 }
