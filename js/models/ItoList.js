@@ -27,7 +27,7 @@ class ItoList {
                 itemIndex = index;
                 break;
             }
-            
+            console.log(index);
         }
 
         if(itemIndex >= 0) {

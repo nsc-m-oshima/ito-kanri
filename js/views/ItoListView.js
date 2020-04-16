@@ -3,12 +3,19 @@ class ItoListView {
         this._element = element;
     }
 
-    _template() {
+    _template(ito) {
         return `<tr class="ito">
             <td>${ito.color}</td>
             <td>${ito.brand}</td>
             <td>${ito.hinban}</td>
         </tr>`;
+    }
+
+    update(ito) {
+
+        let a = this._element.innerHTML;
+
+        this._element.innerHTML = a + this._template(ito);
     }
 
     _templateDocument(ito) {
@@ -20,7 +27,7 @@ class ItoListView {
         tdBrand.textContent = ito.brand;
 
         let tdHinban = document.createElement('td');
-        tdHinban.textContent = ito.hinban;
+        tdHinban.textContent = ito.number;
 
         tr.appendChild(tdColor);
         tr.appendChild(tdBrand);
@@ -29,16 +36,9 @@ class ItoListView {
         this._element.appendChild(tr);
     }
 
-    update(ito) {
-
-        let a = this._element.innerHTML;
-
-        this._element.innerHTML = a + this._template(ito);
-    }
-
     // 糸テーブルをクリアするメソッド
     clear() {
         this._element.innerHTML = '';
-        
+
     }
 }
